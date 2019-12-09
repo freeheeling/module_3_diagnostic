@@ -1,7 +1,15 @@
-class SearchController < ApplicationController
-  def index
-    house = params[:house]
-    
+class HouseMemberSearch
+  attr_reader :house
+
+  def initialize(house)
+    @house = house
+  end
+
+  def member_count
+    members.count
+  end
+
+  def members
     conn = Faraday.new(url: 'https://www.potterapi.com/v1/') do |faraday|
       faraday.params['key'] = ENV['POTTER_API_KEY']
       faraday.params['house'] = house
@@ -11,7 +19,6 @@ class SearchController < ApplicationController
 
     response = conn.get('characters')
 
-    json = JSON.parse(response.body, symbolize_names: true)
-    @members = json
+    JSON.parse(response.body, symbolize_names: true)
   end
 end
