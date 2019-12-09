@@ -16,6 +16,7 @@ gem 'figaro'
 
 group :development, :test do
   gem 'pry'
+  gem 'awesome_print'
 end
 
 group :test do
