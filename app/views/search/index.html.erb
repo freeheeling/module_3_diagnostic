@@ -1,0 +1,13 @@
+<h1><%= @members.count %> Results </h1>
+<% @members.each do |member| %>
+  <ul class='member'>
+    <li class='name'><%= member[:name] %></li>
+    <% if member[:role] %>
+      <li class='role'><%= member[:role] %></li>
+    <% end %>
+    <li class='house'><%= member[:house] %></li>
+    <% if member[:patronus] %>
+      <li class='patronus'><%= member[:patronus] %></li>
+    <% end %>
+  </ul>
+<% end %>
