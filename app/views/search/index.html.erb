@@ -1,13 +1,13 @@
-<h1><%= @members.count %> Results </h1>
+<h2><%= @members.count %> Results </h2>
 <% @members.each do |member| %>
   <ul class='member'>
-    <li class='name'><%= member[:name] %></li>
+    <p class='name'>Name: <%= member[:name] %>
     <% if member[:role] %>
-      <li class='role'><%= member[:role] %></li>
+      <p class='role'>Role: <%= member[:role] %>
     <% end %>
-    <li class='house'><%= member[:house] %></li>
+    <p class='house'>House: <%= member[:house] %>
     <% if member[:patronus] %>
-      <li class='patronus'><%= member[:patronus] %></li>
+      <p class='patronus'>Patronus: <%= member[:patronus] %></p>
     <% end %>
-  </ul>
+  </ul><hr>
 <% end %>
