@@ -3,6 +3,7 @@ class SearchController < ApplicationController
     conn = Faraday.new(url: 'https://www.potterapi.com/v1/') do |faraday|
       faraday.params['key'] = '$2a$10$x70VsNbT0A48qM3vLoYXe.wZeXd5qOEKryr75MSeX1AxXzrc9hTMm'
       faraday.params['house'] = 'Gryffindor'
+      faraday.params['orderOfThePhoenix'] = 'true'
       faraday.adapter Faraday.default_adapter
     end
 
