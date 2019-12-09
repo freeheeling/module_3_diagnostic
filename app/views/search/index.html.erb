@@ -4,10 +4,14 @@
     <p class='name'>Name: <%= member[:name] %>
     <% if member[:role] %>
       <p class='role'>Role: <%= member[:role] %>
+    <% else %>
+      <p class='role'>Role:
     <% end %>
     <p class='house'>House: <%= member[:house] %>
     <% if member[:patronus] %>
       <p class='patronus'>Patronus: <%= member[:patronus] %></p>
+    <% else %>
+      <p class='patronus'>Patronus:
     <% end %>
   </ul><hr>
 <% end %>

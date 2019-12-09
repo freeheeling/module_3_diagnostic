@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'user can search for members of each house' do
-  scenario 'user selects valid house name' do
+  scenario 'user selects valid house name', :vcr do
 
     visit '/'
 
@@ -17,9 +17,9 @@ feature 'user can search for members of each house' do
 
     within(first('.member')) do
       expect(first('.name').text).to_not be_empty
-      # expect(page).to have_css('.role')
+      expect(page).to have_css('.role')
       expect(first('.house').text).to_not be_empty
-      # expect(page).to have_css('.patronus')
+      expect(page).to have_css('.patronus')
     end
   end
 end
